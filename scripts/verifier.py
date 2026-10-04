@@ -17,8 +17,13 @@ THREADS = 24
 def lire(chemin):
     lignes = open(chemin, encoding="utf-8").read().splitlines()
     for i, l in enumerate(lignes):
-        if l.startswith("#EXTINF") and i + 1 < len(lignes):
-            yield l.rsplit(",", 1)[-1].strip(), lignes[i + 1].strip()
+        if not l.startswith("#EXTINF"):
+            continue
+        j = i + 1
+        while j < len(lignes) and lignes[j].startswith("#"):  # #EXTVLCOPT et autres options
+            j += 1
+        if j < len(lignes):
+            yield l.rsplit(",", 1)[-1].strip(), lignes[j].strip()
 
 
 def tester(entree):

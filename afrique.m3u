@@ -91,14 +91,14 @@ https://strhlslb01.streamakaci.tv/str_ntv_ntv/str_ntv_ntv_multi/playlist.m3u8
 https://edge-a3.evrideo.tv/8f37c9f0-fe22-44f4-b64a-76ad11730daf_1000026630_HLS/manifest.m3u8
 #EXTINF:-1 group-title="Côte d'Ivoire",RTI 1 (1080p)
 https://cdnapisec.kaltura.com/p/6234172/sp/623417200/playManifest/entryId/1_j70d7pdb/format/applehttp/protocol/https/a.m3u8
-#EXTINF:-1 group-title="Côte d'Ivoire",RTI 2 (480p)
-https://video1.getstreamhosting.com:1936/8104/8104/playlist.m3u8
-#EXTINF:-1 group-title="Côte d'Ivoire",RTI 2 (miroir) (1080p)
+#EXTINF:-1 group-title="Côte d'Ivoire",RTI 2 (1080p)
 https://cdnapisec.kaltura.com/p/6234172/sp/623417200/playManifest/entryId/1_pbprnpab/format/applehttp/protocol/https/a.m3u8
-#EXTINF:-1 group-title="Côte d'Ivoire",RTI La 3 (720p)
-https://video1.getstreamhosting.com:1936/8248/8248/playlist.m3u8
-#EXTINF:-1 group-title="Côte d'Ivoire",RTI La 3 (miroir) (1080p)
+#EXTINF:-1 group-title="Côte d'Ivoire",RTI 2 (miroir) (480p)
+https://video1.getstreamhosting.com:1936/8104/8104/playlist.m3u8
+#EXTINF:-1 group-title="Côte d'Ivoire",RTI La 3 (1080p)
 https://cdnapisec.kaltura.com/p/6234172/sp/623417200/playManifest/entryId/1_ad7taytx/format/applehttp/protocol/https/a.m3u8
+#EXTINF:-1 group-title="Côte d'Ivoire",RTI La 3 (miroir) (720p)
+https://video1.getstreamhosting.com:1936/8248/8248/playlist.m3u8
 #EXTINF:-1 group-title="Côte d'Ivoire",RTVC (720p)
 https://cdn140m.panaccess.com/HLS/RTVC/index.m3u8
 #EXTINF:-1 group-title="Côte d'Ivoire",Serie Max (720p)
@@ -238,9 +238,9 @@ https://live.elheddaftv.com:8081/elheddaftv/index.m3u8
 http://185.9.2.18/chid_347/index.m3u8
 #EXTINF:-1 group-title="Sénégal (sans flux ouvert : direct YouTube via yt-dlp)",2STV
 https://www.youtube.com/channel/UCeLEGbj240J6JhpP7ba8GwA/live
-#EXTINF:-1 group-title="Sénégal (sans flux ouvert : direct YouTube via yt-dlp)",TFM (iGFM)
-https://www.youtube.com/channel/UCqoN2KQbBlVwrDnOXGxOP4w/live
-#EXTINF:-1 group-title="Sénégal (sans flux ouvert : direct YouTube via yt-dlp)",RTS Sénégal
-https://www.youtube.com/@rtssenegal/live
 #EXTINF:-1 group-title="Sénégal (sans flux ouvert : direct YouTube via yt-dlp)",Dakaractu
 https://www.youtube.com/@dakaractu/live
+#EXTINF:-1 group-title="Sénégal (sans flux ouvert : direct YouTube via yt-dlp)",RTS Sénégal
+https://www.youtube.com/@rtssenegal/live
+#EXTINF:-1 group-title="Sénégal (sans flux ouvert : direct YouTube via yt-dlp)",TFM (iGFM)
+https://www.youtube.com/channel/UCqoN2KQbBlVwrDnOXGxOP4w/live
