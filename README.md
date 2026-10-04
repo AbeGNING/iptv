@@ -50,7 +50,7 @@ python scripts/senegal_direct.py
 vlc senegal-direct.m3u      # à ouvrir dans les dix minutes
 ```
 
-Testé le 4 octobre 2026 : les dix chaînes ACAN répondent (SenTV et Walf TV en 1080p). Dailymotion n'a pu être validé que depuis une adresse africaine ; depuis un VPN il renvoie 403.
+Testé le 4 octobre 2026 : les dix chaînes ACAN se décodent (ffprobe, H.264 ; SenTV et Walf TV en 1920x1080), et une lecture engagée se poursuit au-delà des dix minutes (13 minutes continues mesurées avec ffmpeg) : le jeton ne conditionne que l'ouverture du flux, pas sa durée. Dailymotion n'a pu être validé que depuis une adresse africaine ; depuis un VPN il renvoie 403.
 
 Sans flux ouvert d'aucune sorte : **TFM** (Dailymotion hors antenne, serveur bozztv fermé), **2STV** (serveur MediaMTX sans flux publié), **DTV**, **Touba TV**, **Lamp Fall TV**, **Al Mouridiyyah TV**, **Mouride TV**. Leurs directs YouTube restent la seule voie (`yt-dlp -g <url>`).
 
