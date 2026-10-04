@@ -5,10 +5,16 @@ Chaque flux HLS a été vérifié en deux passes (réponse HTTP 200/206 et manif
 
 ## Utilisation
 
-URL à coller dans VLC, Kodi, TiviMate, IPTV Smarters ou tout lecteur compatible M3U :
+URL courte à coller dans VLC, Kodi, TiviMate, IPTV Smarters ou tout lecteur compatible M3U :
 
 ```
-https://raw.githubusercontent.com/AbeGNING/iptv-afrique-francophone/main/afrique-francophone.m3u
+https://abegning.github.io/iptv/afrique.m3u
+```
+
+Adresse de secours (même fichier, servi par GitHub directement) :
+
+```
+https://raw.githubusercontent.com/AbeGNING/iptv/main/afrique.m3u
 ```
 
 ## Contenu
@@ -46,7 +52,7 @@ listes « Sénégal », sont la télévision serbe. Elles ne figurent pas ici.
 ## Revérifier les flux
 
 ```
-python scripts/verifier.py afrique-francophone.m3u
+python scripts/verifier.py afrique.m3u
 ```
 
 Le script teste chaque flux en parallèle et sort en erreur si un flux est en panne.

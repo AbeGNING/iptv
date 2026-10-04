@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Revérifie chaque flux de la playlist et écrit un rapport.
 
-Usage : python scripts/verifier.py afrique-francophone.m3u
+Usage : python scripts/verifier.py afrique.m3u
 Un flux est valide si le serveur répond 200/206 et que le corps commence par #EXTM3U.
 Les entrées YouTube ne sont pas testées (elles passent par yt-dlp).
 """
@@ -38,7 +38,7 @@ def tester(entree):
 
 
 def main():
-    chemin = sys.argv[1] if len(sys.argv) > 1 else "afrique-francophone.m3u"
+    chemin = sys.argv[1] if len(sys.argv) > 1 else "afrique.m3u"
     entrees = list(lire(chemin))
     with cf.ThreadPoolExecutor(THREADS) as ex:
         resultats = list(ex.map(tester, entrees))
