@@ -1,6 +1,6 @@
 #EXTM3U
-# Chaînes africaines francophones, flux vérifiés le 2026-10-04 (deux passes HTTP, contenu #EXTM3U contrôlé)
-# Sources : iptv-org, dépôts GitHub communautaires, sondage des serveurs sen-gt.com et acangroup.org
+# Chaînes africaines francophones, flux vérifiés le 2026-10-04 (deux passes HTTP, manifeste HLS contrôlé)
+# Les grandes chaînes sénégalaises à jeton (SenTV, Walf, 7TV, Leral, RTS...) : voir scripts/senegal_direct.py
 #EXTINF:-1 group-title="Sénégal",A2i Religion (1080p) [Pas 24/7]
 https://stream.sen-gt.com/A2iReligion/myStream/playlist.m3u8
 #EXTINF:-1 group-title="Sénégal",A2i TV (1080p)
@@ -11,26 +11,48 @@ https://acasmedia2.acangroup.org/asfiyahi/asfiyahi_output/playlist.m3u8
 https://vdo3.pro-fhi.net:3218/stream/play.m3u8
 #EXTINF:-1 group-title="Sénégal",GMS TV (1080p)
 https://acasmedia6.acangroup.org/gmstv/gmstv_output/playlist.m3u8
+#EXTINF:-1 group-title="Sénégal",iTV Sénégal
+https://rezopro.playerlive.nl/itv_senegal/itv_senegal/playlist.m3u8
 #EXTINF:-1 group-title="Sénégal",Louga TV (480p)
 https://stream.sen-gt.com/Mbacke/myStream/playlist.m3u8
 #EXTINF:-1 group-title="Sénégal",Seneweb TV [Géo-bloqué]
 https://vdo2.pro-fhi.net:3297/stream/play.m3u8
 #EXTINF:-1 group-title="Sénégal",SenJeunes TV (480p) [Pas 24/7]
 https://stream.sen-gt.com/senjeunestv/myStream/playlist.m3u8
-#EXTINF:-1 group-title="Panafricain",Africa 24 (1080p)
+#EXTINF:-1 group-title="Panafricain et international",Africa 24 (1080p)
 https://edge12.vedge.infomaniak.com/livecast/ik:africa24/manifest.m3u8
-#EXTINF:-1 group-title="Panafricain",Africa 24 English (1080p)
+#EXTINF:-1 group-title="Panafricain et international",Africa 24 English (1080p)
 https://edge17.vedge.infomaniak.com/livecast/ik:africa24sport/manifest.m3u8
-#EXTINF:-1 group-title="Panafricain",AFRICA 24 FR (1080p)
+#EXTINF:-1 group-title="Panafricain et international",AFRICA 24 FR (1080p)
 https://africa24.vedge.infomaniak.com/livecast/ik:africa24/manifest.m3u8
-#EXTINF:-1 group-title="Panafricain",Africa 24 Sport (1080p)
+#EXTINF:-1 group-title="Panafricain et international",Africa 24 Sport (1080p)
 https://africa24.vedge.infomaniak.com/livecast/ik:africa24sport/manifest.m3u8
-#EXTINF:-1 group-title="Panafricain",AFRICANEWS FR (720p)
+#EXTINF:-1 group-title="Panafricain et international",AFRICANEWS FR (720p)
 https://cdn-euronews.akamaized.net/live/eds/africanews-fr/25050/index.m3u8
-#EXTINF:-1 group-title="Panafricain",AFRICANEWS FR (backup) (720p)
+#EXTINF:-1 group-title="Panafricain et international",AFRICANEWS FR (backup) (720p)
 https://stream.ads.ottera.tv/playlist.m3u8?network_id=10951
-#EXTINF:-1 group-title="Panafricain",Business 24 Africa (405p)
+#EXTINF:-1 group-title="Panafricain et international",Business 24 Africa (405p)
 https://cdn-globecast.akamaized.net/live/eds/business24_tv/hls_video/index.m3u8
+#EXTINF:-1 group-title="Panafricain et international",France 24 (1080p)
+https://static.france24.com/live/F24_FR_HI_HLS/live_web.m3u8
+#EXTINF:-1 group-title="Panafricain et international",Trace Africa (720p)
+https://channels.trace.plus/Traceprod/AFRICA_FR_hd/index.m3u8
+#EXTINF:-1 group-title="Panafricain et international",Trace Gospel FR (720p)
+https://channels.trace.plus/Traceprod/GOSPEL_FR_hd/index.m3u8
+#EXTINF:-1 group-title="Panafricain et international",Trace Kitoko (720p)
+https://channels.trace.plus/Traceprod/KITOKO_hd/index.m3u8
+#EXTINF:-1 group-title="Panafricain et international",Trace Mziki (720p)
+https://channels.trace.plus/Traceprod/MZIKI_hd/index.m3u8
+#EXTINF:-1 group-title="Panafricain et international",Trace Naija (720p)
+https://channels.trace.plus/Traceprod/NAIJA_hd/index.m3u8
+#EXTINF:-1 group-title="Panafricain et international",Trace Sport Stars (720p)
+https://channels.trace.plus/Traceprod/TRACE_SPORT_STARS_hd/index.m3u8
+#EXTINF:-1 group-title="Panafricain et international",Trace Toca (720p)
+https://channels.trace.plus/Traceprod/TOCA_hd/index.m3u8
+#EXTINF:-1 group-title="Panafricain et international",Trace Urban FR (720p)
+https://channels.trace.plus/Traceprod/URBAN_FR_hd/index.m3u8
+#EXTINF:-1 group-title="Panafricain et international",TV5MONDE Info (1080p)
+https://ott.tv5monde.com/Content/HLS/Live/channel(info)/variant.m3u8
 #EXTINF:-1 group-title="Côte d'Ivoire",7 Info (1080p)
 https://video1.getstreamhosting.com:1936/8042/8042/playlist.m3u8
 #EXTINF:-1 group-title="Côte d'Ivoire",A12 TV (720p)
@@ -43,31 +65,86 @@ https://streamtv.cmediahosthosting.net:3836/live/myafroculturelive.m3u8
 https://tv.voozmedia.fun/benietv/index.m3u8
 #EXTINF:-1 group-title="Côte d'Ivoire",Champion TV
 https://stream.berosat.live/hls/champion-tv/champion-tv.m3u8
+#EXTINF:-1 group-title="Côte d'Ivoire",Fitini TV (1080p)
+https://video1.getstreamhosting.com:1936/8492/8492/playlist.m3u8
 #EXTINF:-1 group-title="Côte d'Ivoire",Guide Love TV (480p)
 https://video1.getstreamhosting.com:1936/8056/8056/playlist.m3u8
 #EXTINF:-1 group-title="Côte d'Ivoire",Ivoire Channel (288p)
 https://video1.getstreamhosting.com:1936/8244/8244/playlist.m3u8
+#EXTINF:-1 group-title="Côte d'Ivoire",L'Intelligent TV (720p)
+https://video1.getstreamhosting.com:1936/8074/8074/playlist.m3u8
+#EXTINF:-1 group-title="Côte d'Ivoire",Life TV (720p)
+https://strhls.streamakaci.tv/str_lifetv_lifetv/str_lifetv_multi/playlist.m3u8
+#EXTINF:-1 group-title="Côte d'Ivoire",Life TV (miroir) (720p)
+https://strhlslb01.streamakaci.tv/str_lifetv_lifetv/str_lifetv_multi/playlist.m3u8
 #EXTINF:-1 group-title="Côte d'Ivoire",LM TV French (720p) [Pas 24/7]
 https://video1.getstreamhosting.com:1936/8282/8282/playlist.m3u8
 #EXTINF:-1 group-title="Côte d'Ivoire",Miracle TV+ (1080p)
 https://strhlslb01.streamakaci.tv/str_mtv_mtv/str_mtv_multi/playlist.m3u8
+#EXTINF:-1 group-title="Côte d'Ivoire",NCI (1080p)
+https://cdnapisec.kaltura.com/p/5571652/sp/557165200/playManifest/entryId/1_2gnrfyb6/format/applehttp/protocol/https/a.m3u8
+#EXTINF:-1 group-title="Côte d'Ivoire",Novela Channel (720p)
+https://video1.getstreamhosting.com:1936/8352/8352/playlist.m3u8
 #EXTINF:-1 group-title="Côte d'Ivoire",NTV (Ivory Coast) (1080p) [Pas 24/7]
 https://strhlslb01.streamakaci.tv/str_ntv_ntv/str_ntv_ntv_multi/playlist.m3u8
 #EXTINF:-1 group-title="Côte d'Ivoire",Reflet TV (1080p)
 https://edge-a3.evrideo.tv/8f37c9f0-fe22-44f4-b64a-76ad11730daf_1000026630_HLS/manifest.m3u8
-#EXTINF:-1 group-title="Côte d'Ivoire",RTI 1 (480p)
-https://video1.getstreamhosting.com:1936/8336/8336/playlist.m3u8
+#EXTINF:-1 group-title="Côte d'Ivoire",RTI 1 (1080p)
+https://cdnapisec.kaltura.com/p/6234172/sp/623417200/playManifest/entryId/1_j70d7pdb/format/applehttp/protocol/https/a.m3u8
+#EXTINF:-1 group-title="Côte d'Ivoire",RTI 2 (480p)
+https://video1.getstreamhosting.com:1936/8104/8104/playlist.m3u8
+#EXTINF:-1 group-title="Côte d'Ivoire",RTI 2 (miroir) (1080p)
+https://cdnapisec.kaltura.com/p/6234172/sp/623417200/playManifest/entryId/1_pbprnpab/format/applehttp/protocol/https/a.m3u8
+#EXTINF:-1 group-title="Côte d'Ivoire",RTI La 3 (720p)
+https://video1.getstreamhosting.com:1936/8248/8248/playlist.m3u8
+#EXTINF:-1 group-title="Côte d'Ivoire",RTI La 3 (miroir) (1080p)
+https://cdnapisec.kaltura.com/p/6234172/sp/623417200/playManifest/entryId/1_ad7taytx/format/applehttp/protocol/https/a.m3u8
 #EXTINF:-1 group-title="Côte d'Ivoire",RTVC (720p)
 https://cdn140m.panaccess.com/HLS/RTVC/index.m3u8
 #EXTINF:-1 group-title="Côte d'Ivoire",Serie Max (720p)
 https://video1.getstreamhosting.com:1936/8330/8330/playlist.m3u8
+#EXTINF:-1 group-title="Côte d'Ivoire",Star+ Novelas (1080p)
+https://video1.getstreamhosting.com:1936/8320/8320/playlist.m3u8
+#EXTINF:-1 group-title="Cameroun",Afrique Media (1080p)
+#EXTVLCOPT:http-referrer=https://odysee.com
+https://cloud.odysee.live/content/fe06b3cdc9412e359368b2455b6ea5e93856e382/master.m3u8|Referer=https://odysee.com
+#EXTINF:-1 group-title="Cameroun",Allo Cine (1080p)
+https://d1yl6bf4hrzbr0.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-5km3zs4zs9sp0/allo.m3u8
+#EXTINF:-1 group-title="Cameroun",CAM 10 TV (576p)
+https://stream.it-innov.com/cam10tv/index.m3u8
+#EXTINF:-1 group-title="Cameroun",CRTV (1080p)
+https://10gb1.acangroup.org:1929/crtv/crtv_all/playlist.m3u8
+#EXTINF:-1 group-title="Cameroun",CRTV News (1080p)
+https://live1.acangroup.org:1929/publiclive/crtv_news/playlist.m3u8
+#EXTINF:-1 group-title="Cameroun",For You TV
+https://stream.az-multimedia.com:3325/live/foryoutvlive.m3u8
+#EXTINF:-1 group-title="Cameroun",Heaven TV (720p)
+https://video1.getstreamhosting.com:1936/8064/8064/playlist.m3u8
+#EXTINF:-1 group-title="Cameroun",Kemet TV (480p)
+https://kemettv.cm/memfs/b6d60ea7-18b4-4afb-b84f-bd082ed7f74f.m3u8
+#EXTINF:-1 group-title="Cameroun",Laura Dave Media TV (720p)
+https://streaming.lauradavemedia.com/ldm/index.m3u8
+#EXTINF:-1 group-title="Cameroun",Mix Radio 1 TV (1080p)
+https://video1.getstreamhosting.com:1936/8140/8140/playlist.m3u8
+#EXTINF:-1 group-title="Cameroun",My TV Channel (720p) [Pas 24/7]
+http://connectiktv.ddns.net:5000/mytvchannel/@mytvchannel/playlist.m3u8
+#EXTINF:-1 group-title="Cameroun",Orthodoxa CMR Television (1080p)
+https://video1.getstreamhosting.com:1936/8210/8210/playlist.m3u8
+#EXTINF:-1 group-title="Cameroun",Play TV (Cameroon) (720p) [Pas 24/7]
+http://connectiktv.ddns.net:5000/playtv/@playtv/playlist.m3u8
+#EXTINF:-1 group-title="Cameroun",PLEX TV (720p)
+http://connectiktv.ddns.net:5000/plextv/@plextv/playlist.m3u8
+#EXTINF:-1 group-title="Cameroun",TR24 Television (720p)
+https://stream.it-innov.com/tr24/index.m3u8
 #EXTINF:-1 group-title="Mali",D3 TV (720p)
 https://lbgo.bozztv.com/ssh101/ssh101/d3tvnet/playlist.m3u8
-#EXTINF:-1 group-title="Guinée",Afrik Info TV
+#EXTINF:-1 group-title="Mali",D3 TV (miroir) (720p)
+https://live20.bozztv.com/akamaissh101/ssh101/d3tvnet/playlist.m3u8
+#EXTINF:-1 group-title="Guinée",Afrik Info TV (854x480 (ffprobe))
 https://kali.vdopanel.com:3119/hybrid/play.m3u8
 #EXTINF:-1 group-title="Guinée",Espace TV (576p)
 https://edge11.vedge.infomaniak.com/livecast/ik:espacetv/manifest.m3u8
-#EXTINF:-1 group-title="Guinée",Kalac TV
+#EXTINF:-1 group-title="Guinée",Kalac TV (1920x1080 (ffprobe))
 https://edge13.vedge.infomaniak.com/livecast/ik:kalactv/chunklist_w280736538.m3u8
 #EXTINF:-1 group-title="Burkina Faso",Filinfo TV (1080p)
 https://d2iqjnqfr8pv3b.cloudfront.net/out/v1/d09d2fc718404cd8bccd3eba2444dd70/index.m3u8
@@ -75,8 +152,8 @@ https://d2iqjnqfr8pv3b.cloudfront.net/out/v1/d09d2fc718404cd8bccd3eba2444dd70/in
 https://edge12.vedge.infomaniak.com/livecast/ik:rtblive1_8/manifest.m3u8
 #EXTINF:-1 group-title="Burkina Faso",RTB 3 (720p)
 https://edge13.vedge.infomaniak.com/livecast/ik:rtb3-1/manifest.m3u8
-#EXTINF:-1 group-title="Burkina Faso",Savane TV
-https://savane24.tv:5443/LiveApp/streams/Y4fyif69Q0ll6MeH2190896734859843.m3u8
+#EXTINF:-1 group-title="Burkina Faso",RTB Guiriko (720p)
+https://edge11.vedge.infomaniak.com/livecast/ik:rtbguiriko-2/manifest.m3u8
 #EXTINF:-1 group-title="Niger",Tal TV (1080p)
 https://mediaserver1.castpin.com/hls/taltv/index.m3u8
 #EXTINF:-1 group-title="Niger",Tele Sahel (1080p)
@@ -87,44 +164,28 @@ https://live.saharamedias.net:3317/live/shara24live.m3u8
 https://strhlslb01.streamakaci.tv/str_tchad_tchad/str_tchad_multi/playlist.m3u8
 #EXTINF:-1 group-title="Bénin",ADO TV (720p)
 https://strhls.streamakaci.tv/ortb/ortb2-multi/playlist.m3u8
-#EXTINF:-1 group-title="Bénin",Eden TV [Pas 24/7]
+#EXTINF:-1 group-title="Bénin",Eden TV (1280x720 (ffprobe)) [Pas 24/7]
 https://rtmp.edentv.bj/hls/stream.m3u8
-#EXTINF:-1 group-title="Bénin",Le Nouveau Manager TV
-https://lnmlive.com/live/lnmtv.m3u8
+#EXTINF:-1 group-title="Bénin",ORTB 1 (1080p)
+https://strhls.streamakaci.tv/ortb/ortb1-multi/playlist.m3u8
 #EXTINF:-1 group-title="Bénin",TVC Benin (720p)
 https://live.tvcbenin.com/direct/729c37a1d3319ee21991227b1f84c687.sdp/playlist.m3u8
-#EXTINF:-1 group-title="Togo",Chandel TV
+#EXTINF:-1 group-title="Togo",Chandel TV (1280x720 (ffprobe))
 https://kali.vdopanel.com:3660/live/vj6jlam1rlive.m3u8
 #EXTINF:-1 group-title="Togo",RT JVA (720p) [Pas 24/7]
 https://cdn140m.panaccess.com/HLS/RTVJA/index.m3u8
 #EXTINF:-1 group-title="Togo",Television Espoir 47 (720p)
 https://cdn140m.panaccess.com/HLS/Espoir47/index.m3u8
-#EXTINF:-1 group-title="Cameroun",Allo Cine (1080p)
-https://d1yl6bf4hrzbr0.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-5km3zs4zs9sp0/allo.m3u8
-#EXTINF:-1 group-title="Cameroun",CAM 10 TV (576p)
-https://stream.it-innov.com/cam10tv/index.m3u8
-#EXTINF:-1 group-title="Cameroun",CRTV News (1080p)
-https://live1.acangroup.org:1929/publiclive/crtv_news/playlist.m3u8
-#EXTINF:-1 group-title="Cameroun",For You TV
-https://stream.az-multimedia.com:3325/live/foryoutvlive.m3u8
-#EXTINF:-1 group-title="Cameroun",Laura Dave Media TV (720p)
-https://streaming.lauradavemedia.com/ldm/index.m3u8
-#EXTINF:-1 group-title="Cameroun",My TV Channel (720p) [Pas 24/7]
-http://connectiktv.ddns.net:5000/mytvchannel/@mytvchannel/playlist.m3u8
-#EXTINF:-1 group-title="Cameroun",Play TV (Cameroon) (720p) [Pas 24/7]
-http://connectiktv.ddns.net:5000/playtv/@playtv/playlist.m3u8
-#EXTINF:-1 group-title="Cameroun",PLEX TV (720p)
-http://connectiktv.ddns.net:5000/plextv/@plextv/playlist.m3u8
-#EXTINF:-1 group-title="Cameroun",TR24 Television (720p)
-https://stream.it-innov.com/tr24/index.m3u8
-#EXTINF:-1 group-title="RD Congo",Baraka Television [Pas 24/7]
+#EXTINF:-1 group-title="RD Congo",Baraka Television (854x480 (ffprobe)) [Pas 24/7]
 https://stream.berosat.live:19360/baraka-hd/baraka-hd.m3u8
 #EXTINF:-1 group-title="RD Congo",EVI TV (1080p)
 https://mistserver.evi-tv.com/hls/evi_tv_live/index.m3u8
 #EXTINF:-1 group-title="RD Congo",LBFD RTV (720p)
 https://tnt-television.com/LBFD_RTV/index.m3u8
-#EXTINF:-1 group-title="RD Congo",Lollywood HD TV
+#EXTINF:-1 group-title="RD Congo",Lollywood HD TV (856x480 (ffprobe))
 https://stream.berosat.live/hls/lollywood-hd/lollywood-hd.m3u8
+#EXTINF:-1 group-title="RD Congo",RL PRO TV (480p)
+https://stream.berosat.live:19360/rlpro-tv/rlpro-tv.m3u8
 #EXTINF:-1 group-title="Congo",DRTV International
 https://vps122407.serveur-vps.net/hls/drtv.m3u8
 #EXTINF:-1 group-title="Congo",Esaie 45 Tele
@@ -171,25 +232,15 @@ https://webcam.mosaiquefm.net/mosatv/_definst_/studio/playlist.m3u8?DVR
 https://cdn.live.easybroadcast.io/abr_corp/66_al24_u4yga6h/corp/66_al24_u4yga6h_240p/chunks.m3u8
 #EXTINF:-1 group-title="Algérie",Amou Yazid TV (1080p)
 http://mkstream.servehttp.com:1940/AmouYazid/ay1/playlist.m3u8
-#EXTINF:-1 group-title="Algérie",CNA (Algeria) (360p) [Pas 24/7]
-https://live.creacast.com/cna/stream/playlist.m3u8
 #EXTINF:-1 group-title="Algérie",El-Heddaf TV (1080p)
 https://live.elheddaftv.com:8081/elheddaftv/index.m3u8
 #EXTINF:-1 group-title="Algérie",TV2 (Algeria) (1080p)
 http://185.9.2.18/chid_347/index.m3u8
-#EXTINF:-1 group-title="Sénégal (directs YouTube, via yt-dlp)",2STV
+#EXTINF:-1 group-title="Sénégal (sans flux ouvert : direct YouTube via yt-dlp)",2STV
 https://www.youtube.com/channel/UCeLEGbj240J6JhpP7ba8GwA/live
-#EXTINF:-1 group-title="Sénégal (directs YouTube, via yt-dlp)",Walf TV
-https://www.youtube.com/channel/UCLx-m9nUdtVEF56rVQy_75Q/live
-#EXTINF:-1 group-title="Sénégal (directs YouTube, via yt-dlp)",TFM (iGFM)
+#EXTINF:-1 group-title="Sénégal (sans flux ouvert : direct YouTube via yt-dlp)",TFM (iGFM)
 https://www.youtube.com/channel/UCqoN2KQbBlVwrDnOXGxOP4w/live
-#EXTINF:-1 group-title="Sénégal (directs YouTube, via yt-dlp)",RTS Sénégal
+#EXTINF:-1 group-title="Sénégal (sans flux ouvert : direct YouTube via yt-dlp)",RTS Sénégal
 https://www.youtube.com/@rtssenegal/live
-#EXTINF:-1 group-title="Sénégal (directs YouTube, via yt-dlp)",SenTV
-https://www.youtube.com/@SENTVOFFICIEL/live
-#EXTINF:-1 group-title="Sénégal (directs YouTube, via yt-dlp)",iTV Sénégal
-https://www.youtube.com/@itvsenegal/live
-#EXTINF:-1 group-title="Sénégal (directs YouTube, via yt-dlp)",Leral TV
-https://www.youtube.com/@LERALNET1/live
-#EXTINF:-1 group-title="Sénégal (directs YouTube, via yt-dlp)",Dakaractu
+#EXTINF:-1 group-title="Sénégal (sans flux ouvert : direct YouTube via yt-dlp)",Dakaractu
 https://www.youtube.com/@dakaractu/live

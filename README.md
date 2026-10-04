@@ -1,7 +1,7 @@
 # IPTV Afrique francophone
 
 Playlist M3U de chaînes de télévision africaines francophones, avec un accent sur le Sénégal.
-Chaque flux HLS a été vérifié en deux passes (réponse HTTP 200/206 et manifeste `#EXTM3U` lu) le 4 octobre 2026.
+117 flux HLS vérifiés en deux passes (réponse HTTP 200/206, manifeste HLS avec variantes ou segments) le 4 octobre 2026, plus un script pour les grandes chaînes sénégalaises à jeton.
 
 ## Utilisation
 
@@ -17,37 +17,48 @@ Adresse de secours (même fichier, servi par GitHub directement) :
 https://raw.githubusercontent.com/AbeGNING/iptv/main/afrique.m3u
 ```
 
-## Contenu
+## Contenu de la playlist
 
 | Groupe | Flux | Exemples |
 |---|---|---|
-| Sénégal | 8 | A2i TV, A2i Religion, Asfiyahi TV, GMS TV, Louga TV, SenJeunes TV, Seneweb TV, Diaspora 24 |
-| Sénégal (directs YouTube) | 8 | RTS, TFM, 2STV, Walf TV, SenTV, iTV, Leral TV, Dakaractu |
-| Panafricain | 7 | Africa 24, Africanews FR, Business 24 Africa |
-| Côte d'Ivoire | 15 | RTI 1, NTV, 7 Info, Ivoire Channel |
-| Cameroun | 9 | CRTV News, Allo Ciné, CAM 10 TV |
+| Sénégal | 9 | iTV Sénégal, A2i TV, A2i Religion, Asfiyahi TV, GMS TV, Louga TV, SenJeunes TV, Seneweb TV, Diaspora 24 |
+| Côte d'Ivoire | 26 | RTI 1, RTI 2, RTI La 3 (1080p via Kaltura), NCI (1080p), Life TV, 7 Info, NTV, Fitini TV, L'Intelligent TV, Novela Channel |
+| Cameroun | 15 | CRTV (1080p), CRTV News, Afrique Media, Allo Ciné, CAM 10 TV, Kemet TV, Heaven TV, TR24 |
+| Panafricain et international | 17 | France 24, TV5MONDE Info, Africa 24, Africanews FR, Business 24, Trace Africa, Trace Urban FR, Trace Gospel FR |
 | Maroc | 9 | 2M, Al Maghribia, Medi1TV Afrique |
 | Rwanda | 6 | TV1, TV10, Rwanda TV |
-| Algérie | 5 | AL24 News, El-Heddaf TV |
-| Burkina Faso | 4 | RTB, RTB 3, Savane TV, Filinfo TV |
-| Bénin | 4 | TVC Bénin, ADO TV, Eden TV |
-| RD Congo | 4 | EVI TV, LBFD RTV |
+| RD Congo | 5 | EVI TV, LBFD RTV, RL PRO TV |
+| Burkina Faso, Bénin, Algérie | 4 chacun | RTB, RTB 3, RTB Guiriko, ORTB 1, TVC Bénin, AL24 News |
 | Guinée, Togo, Congo, Tunisie | 3 chacun | Espace TV, Kalac TV, Mosaïque FM |
-| Niger, Mali, Mauritanie, Tchad | 1 à 2 | Télé Sahel, D3 TV, Sahara 24, Télé Tchad |
+| Mali, Niger, Mauritanie, Tchad | 1 à 2 | D3 TV, Télé Sahel, Sahara 24, Télé Tchad |
+| Sénégal (YouTube, dernier recours) | 4 | 2STV, TFM, RTS, Dakaractu |
 
-Marqueurs dans les noms : `[Pas 24/7]` (émission par tranches), `[Géo-bloqué]` (réservé à certains pays).
+Marqueurs : `[Pas 24/7]` (émission par tranches), `[Géo-bloqué]` (réservé à certains pays), `(miroir)` (second hébergeur de la même chaîne).
+Afrique Media exige l'en-tête `Referer: https://odysee.com` : l'entrée porte un `#EXTVLCOPT` pour VLC et le suffixe `|Referer=` pour Kodi/TiviMate.
 
-## Pourquoi RTS, TFM, 2STV, Walf TV et SenTV ne sont qu'en YouTube
+## Grandes chaînes sénégalaises : SenTV, Walf TV, 7TV, Leral TV, RTS 1 et 2
 
-Ces chaînes sont hébergées par ACAN Group sur un serveur Wowza dont le manifeste HLS exige un jeton signé
-(`wmsAuthSign`, lié à la session et valable dix minutes). Aucun flux ouvert n'existe ; toutes les URL qui circulent
-pour ces chaînes (69.64.57.208, live3.acangroup.org, uvotv, push2stream) sont mortes ou renvoient 403.
-Les entrées YouTube pointent vers la page `/live` de chaque chaîne : elles se lisent avec `yt-dlp -g <url>` ou
-un lecteur qui sait résoudre YouTube (VLC récent, extension YouTube de Kodi). Ces chaînes ne diffusent pas en
-continu sur YouTube ; hors direct, l'entrée reste vide.
+Elles ne sont pas dans la playlist statique, et aucune liste publique ne peut les contenir durablement :
 
-Attention : les « RTS 1 » et « RTS 2 » hébergées sur `webtvstream.bhtelecom.ba`, présentes dans beaucoup de
-listes « Sénégal », sont la télévision serbe. Elles ne figurent pas ici.
+- **SenTV, Walf TV, 7TV, Leral TV, Télé École, Asfiyahi TV, Malikia TV, Global TV HD, CIS Media TV, RTJ TV** sont servies par ACAN Group (`live1.acangroup.org:1929`) derrière un jeton `wmsAuthSign` valable dix minutes. Le jeton s'obtient sans navigateur sur l'API publique `tveapi.acan.group` et ouvre toutes ces chaînes à la fois.
+- **RTS 1, RTS 2, RSI, RFM** diffusent sur Dailymotion (identifiants de direct permanents) ; l'URL HLS, elle, expire après un quart d'heure et le CDN refuse les adresses IP de centres de données ou de VPN.
+
+Le script `scripts/senegal_direct.py` fabrique à la demande une playlist personnelle avec des jetons frais :
+
+```
+python scripts/senegal_direct.py
+vlc senegal-direct.m3u      # à ouvrir dans les dix minutes
+```
+
+Testé le 4 octobre 2026 : les dix chaînes ACAN répondent (SenTV et Walf TV en 1080p). Dailymotion n'a pu être validé que depuis une adresse africaine ; depuis un VPN il renvoie 403.
+
+Sans flux ouvert d'aucune sorte : **TFM** (Dailymotion hors antenne, serveur bozztv fermé), **2STV** (serveur MediaMTX sans flux publié), **DTV**, **Touba TV**, **Lamp Fall TV**, **Al Mouridiyyah TV**, **Mouride TV**. Leurs directs YouTube restent la seule voie (`yt-dlp -g <url>`).
+
+Attention : les « RTS 1 » et « RTS 2 » hébergées sur `webtvstream.bhtelecom.ba`, présentes dans beaucoup de listes « Sénégal », sont la télévision serbe. Elles ne figurent pas ici.
+
+## Chaînes recherchées sans résultat
+
+Côte d'Ivoire : A+ Ivoire (bouquet Canal+, payant). Cameroun : Canal 2 International, Equinoxe TV, Vision 4, STV, Info TV, DBS TV, Vox Africa (sites injoignables ou sans lecteur, aucun flux dans les sources publiques). Afrique de l'Ouest : ORTM, Africable, RTG Guinée, TVT Togo, Gabon 1ère, Télé Congo, RTNC (anciens serveurs éteints).
 
 ## Revérifier les flux
 
